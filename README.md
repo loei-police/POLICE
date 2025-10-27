@@ -1,4 +1,684 @@
-# POLICEPOLICE
+
+บันทึกการเปลี่ยนแปลง: อัปเดตสำหรับ v0.11.0
+6c4d7b9
+ - 
+3 ปีที่แล้ว
+766 บรรทัด (731 loc) · 33.5 KB
+
+ตัวอย่าง
+
+รหัส
+
+ตำหนิ
+v0.11.0 - 11/11/2022
+
+การเปลี่ยนแปลงแอปพลิเคชัน
+แก้ไขข้อผิดพลาดในการสร้างอินสแตนซ์เอาท์พุต wavfile ที่เกิดจากการนับช่องสัญญาณที่ไม่ได้กำหนด
+แก้ไขข้อผิดพลาดในการสร้างอินสแตนซ์เอาต์พุต portaudio ที่เกิดจากการนับช่องสัญญาณที่ไม่ได้กำหนด
+การเปลี่ยนแปลงหลัก
+เพิ่มค่าส่งคืนทางออกที่ประสบความสำเร็จstop()และwait()วิธีการของ CompositeBlock
+การเปลี่ยนแปลง API ของ C
+เพิ่มพารามิเตอร์การส่งคืนทางออกที่ประสบความสำเร็จให้กับluaradio_stop()และ luaradio_wait()ฟังก์ชัน
+การเปลี่ยนแปลงเอกสาร
+อัปเดตข้อกำหนดเบื้องต้นของ Ubuntu และ Debian/Raspbian ในคู่มือการติดตั้ง
+ผู้สนับสนุน
+@abutcher-gh - 8c56329
+เจย์ ซิสซัม (@jsissom) - 6519586
+มาร์ค ฮิลส์ (@hills) - eabf21c
+v0.10.0 - 06/09/2021
+
+การเปลี่ยนแปลงแอปพลิเคชัน
+เพิ่มแอปพลิเคชันในตัวด้วย rx_raw, rx_wbfm, rx_nbfm, rx_am, rx_ssb, rx_rds, rx_ax25, rx_pocsag, rx_ert และ iq_converter
+การเปลี่ยนแปลงบล็อค
+รีแฟกเตอร์เพื่อใช้ PipeMux ใน ThrottleBlock และ HackRFSink
+เพิ่มการสนับสนุนสำหรับ v3 API (libsdrplay_api) ให้กับ SDRplaySource
+รีแฟกเตอร์ตัวเลือกชื่อเรื่องลงในตารางตัวเลือกและเพิ่มตัวเลือกประทับเวลาสำหรับ PrintSink
+ใช้งานtostring()สำหรับประเภท AX25FrameType, POCSAGMessageType และ RDSPacketType
+แก้ไขคำเตือนที่ไม่ถูกต้องเกี่ยวกับการบล็อกที่ยุติลงเมื่อปิดระบบสำหรับ AirspySource
+แก้ไขข้อผิดพลาดการตรวจสอบที่ขาดหายไปสำหรับโหมดการตั้งค่าเกนและแก้ไขการพิมพ์ผิดในข้อความแสดงข้อผิดพลาดการตั้งค่าเกนใน BladeRFSource
+ตั้งค่าเริ่มต้นเป็นค่าเกนอัตโนมัติหากไม่มีการระบุค่าเกนแบบกำหนดเองใน RtlSdrSource และ UHDSource
+การเปลี่ยนแปลงแบบองค์รวม
+เพิ่ม RDSDecoderBlock ลงในกราฟการไหลของ RDSReceiver
+การเปลี่ยนแปลงนักวิ่ง
+เพิ่มการรองรับแอปพลิเคชันในตัว
+การเปลี่ยนแปลงหลัก
+เพิ่มอาร์กิวเมนต์การนับที่เป็นทางเลือกread()ใน PipeMux
+เพิ่มฟังก์ชันตัวช่วยใหม่parse_args(), format_options(), array_concat(), array_map(), table_extend(), table_keys(), table_values()และ
+เพิ่มกรอบการทำงานแอปพลิเคชันในตัว
+การเปลี่ยนแปลงเอกสาร
+แก้ไขคำพิมพ์ผิดเล็กน้อยใน docstrings บางรายการ
+เพิ่มคำอธิบาย PipeMux และ ControlSocket ลงในเอกสารสถาปัตยกรรม
+เพิ่มเอกสารการสมัคร
+v0.9.1 - 01/08/2021
+
+การเปลี่ยนแปลงบล็อค
+แก้ไขคำเตือนที่ไม่ถูกต้องเกี่ยวกับการยุติบล็อกดาวน์สตรีมเมื่อปิดระบบใน RtlSdrSource
+การเปลี่ยนแปลงหลัก
+แก้ไขการจัดการการปิดการทำงานของกราฟกระแสข้อมูลบน Mac OS X เนื่องจากขาดหาย sigtimedwait()ไป
+v0.9.0 - 01/04/2021
+
+การเพิ่มบล็อค
+บล็อคตัวกรองพัลส์แมตช์
+บล็อคตัวปรับแอมพลิจูดพัลส์
+ตัวปรับแอมพลิจูดแบบสี่เหลี่ยมจัตุรัสบล็อก
+เบลดอาร์เอฟซอร์ส
+เบลดอาร์เอฟซิงค์
+การเปลี่ยนแปลงบล็อค
+แก้ไขการรองรับการจัดการไฟล์ Lua ด้วย PrintSink และ BenchmarkSink
+เพิ่มการสนับสนุนสำหรับชื่อรายงานที่เป็นทางเลือกให้กับ PrintSink และ BenchmarkSink
+การเปลี่ยนแปลงหลัก
+รีแฟกเตอร์การอ่านและการเขียนมัลติเพล็กซ์ของท่อลงในคลาส PipeMux
+เพิ่มซ็อกเก็ตการควบคุมให้กับบล็อกเพื่อใช้งานการปิดระบบอย่างราบรื่นและรองรับอินเทอร์เฟซการควบคุมแบบอะซิงโครนัสในอนาคต
+นำกราฟการไหลกลับมาใช้ใหม่เพื่อหยุดการทำงานด้วยซ็อกเก็ตควบคุมเพื่อให้สามารถปิดระบบได้เร็วและราบรื่นยิ่งขึ้น
+เพิ่มการยุติกระบวนการบล็อกที่ไม่ตอบสนองโดยอัตโนมัติเพื่อหยุดกราฟการไหล
+แก้ไขการบล็อกในการรอในกราฟการไหลเมื่อกราฟการไหลสิ้นสุดลงแล้วหรือเมื่อรันกราฟการไหลหลายรายการ
+การเปลี่ยนแปลงเอกสาร
+เพิ่ม BladeRF และ PortAudio ลงในเอกสารฮาร์ดแวร์ที่รองรับ
+การเปลี่ยนแปลงเว็บไซต์
+Improve reference manual layout and navigation.
+Improve sidebar position and layout.
+v0.8.0 - 10/22/2020
+
+Block additions
+FrequencyModulatorBlock
+ManchesterMatchedFilterBlock
+PreambleSamplerBlock
+IDMFramerBlock
+SCMFramerBlock
+SCMPlusFramerBlock
+Composite additions
+ERTReceiver
+Block changes
+Add file locking to JSONSink to support interleaved writes to the same file from multiple instances of the sink.
+Add alternative library name candidates to PortAudioSource, PortAudioSink, PulseAudioSource, PulseAudioSink for better user experience on Debian-based platforms.
+Type changes
+Add tobytes() helper function to the Bit type to convert a Bit vector to bytes.
+Add tostring() helper function to the Bit type to format a Bit vector as a string.
+Core changes
+Add support for trying multiple shared library name candidates in FFI library loads.
+Add alternative library name candidates for liquid-dsp, VOLK, and FFTW3 for better user experience on Debian-based platforms.
+Add support for copying the input data type to the output in block type signatures with the "copy" sentinel.
+Enforce explicit block connections are specified with the output port first and the input port second.
+Refactor hierarchical block functionality of CompositeBlock.
+Add support for type signature differentiation of hierarchical blocks.
+Add support for the initialize() hook for hierarchical blocks, allowing additional initialization based on the sample rates and differentiated type signatures of internal blocks.
+Improve type validation of aliased ports in hierarchical blocks.
+Improve the string representation of block objects during various connectivity stages (unconnected, differentiated, connected).
+Build changes
+Add Lua module installation target to Makefile.
+Documentation changes
+Update CompositeBlock internals with hierarchical block functionality refactoring in architecture document.
+Add Lua module installation option to installation guide.
+Add note about LuaJIT 2.1.0-beta3 embedded bytecode loading bug to installation guide.
+Improve description of shared library in embedding guide.
+Website changes
+Improve formatting of headers and the sidebar.
+Contributors
+Jonas Rudloff (@kokjo) - eb5bc68, 4a16f57, 36ce479
+Paul Harrington (@phrrngtn) - for discussion, many IQ samples, and testing of the ERTReceiver composite.
+v0.7.0 - 04/29/2020
+
+Block additions
+PortAudioSource
+AirspyHFSource
+Block changes
+Add option for direct sampling mode to RtlSdrSource.
+Fix feedback loop causing diminishing throughput in ThrottleBlock.
+Use FFTW_ESTIMATE in fftw DFT/IDFT initialization to reduce startup time on certain platforms (e.g. Raspberry Pi 3) when using FFT accelerated FIRFilterBlock.
+Core changes
+Improve string representation for core C structure types.
+Add type_name property to core types, CStructType factory, and ObjectType factory for use in error and debug reporting.
+Disable call operator for constructed block instances.
+Fix method registration with methods table argument in ObjectType factory function.
+Enforce linear connections between blocks have exactly one output and input port.
+Improve error reporting in type signature differentiation with port names and types.
+Improve flow graph debug reporting with sample rates and data types.
+Add optional count argument to Pipe read().
+Documentation changes
+Add macOS MacPorts package to installation guide and README.
+Improve dependency installation instructions in installation guide and README.
+Add support for @property docstring in reference manual.
+Add mailing list link (https://groups.io/g/luaradio) to README and website.
+Add Airspy HF+ Dual Port and Discovery to Supported Hardware document.
+v0.6.1 - 03/07/2020
+
+Block changes
+Fix gnuplot check under lua52compat LuaJIT for gnuplot plotting sinks.
+Update C API (v0.8) to fix block crash for SoapySDRSource and SoapySDRSink.
+Add library and ABI version reporting to debug dump for SoapySDRSource and SoapySDRSink.
+Migrate to new callback based API (v2.13) for SDRplaySource.
+Update C API (v3.15.0.0) for UHDSource and UHDSink.
+Add library and ABI version reporting to debug dump for UHDSource and UHDSink.
+Clean up manual gain warnings under autogain setup for UHDSource.
+Add device reporting to debug dump for RtlSdrSource.
+Make FFI cdefs more consistent with public APIs for HackRFSink, HackRFSource, UHDSource, UHDSink, and AirspySource.
+Build changes
+Improve LuaJIT library and executable discovery in Makefile.
+Documentation changes
+Fix examples in docstrings for several gnuplot plotting sinks.
+Update and simplify instructions in installation guide.
+Add macOS Homebrew package to installation guide.
+Website changes
+Update hardware and software suggestions in New to SDR guide.
+Contributors
+Jakob L. Kreuze (@TsarFox) - 1dc9f7e
+v0.6.0 - 12/12/2019
+
+Block additions
+JSONSource
+NetworkClientSource
+NetworkServerSource
+NetworkClientSink
+NetworkServerSink
+Block changes
+Add format_utils with binary sample format conversion tables.
+Add network_utils with network server and client utility classes.
+Refactor several file sources and sinks to use format_utils: IQFileSource, RealFileSource, WAVFileSource, IQFileSink, RealFileSink, WAVFileSink.
+Move common shared utilities to radio/utilities/ folder.
+Improve memory copies in several blocks: DelayBlock, FIRFilterBlock, HilbertTransformBlock, ThrottleBlock, GnuplotSpectrumSink, GnuplotWaterfallSink, AX25FramerBlock, POCSAGFramerBlock, RDSFramerBlock.
+Remove stdout debug prints from PulseAudioSource.
+Fix partial reads in RawFileSource.
+Fix error lookups in UHDSource and UHDSink.
+Core changes
+Factor common FFI cdefs out of blocks and into platform module.
+Improve memory copies and clears in vector module.
+Default construct elements on ObjectVector instantiation in vector module.
+Remove radio.core.util export from top namespace.
+Add radio.core.vector export to top namespace.
+Fix namespacing of callback function in async module.
+Add library version lookups to platform module.
+Runner changes
+Add library versions to platform dump.
+Test changes
+Fix Python test code generators for DecimatorBlock and top level test with scipy.signal.decimate() API change.
+Rename code generated tests with .gen.lua suffix.
+Simplify unit test file structure by moving Python test code generators from tests/generator/ folder to alongside generated tests.
+Add .busted configuration to simplify unit testing invocation.
+Add temporarily increased epsilon conditioned on liquid-dsp acceleration for FrequencyTranslatorBlock and TunerBlock tests to accommodate NCO changes in library.
+Benchmark changes
+Add library versions to platform reporting in LuaRadio benchmark results.
+Documentation changes
+Fix formatting of argument types in reference manual.
+Add README to embed/ folder.
+Add busted install instructions to project README and tests README.
+Simplify busted invocation in project README, tests README, and Creating Blocks document.
+Add REPL install instructions and FFI development tips to Creating Blocks document.
+Update links in Creating Blocks, Comparison to GNU Radio, and Supported Hardware documents.
+Thirdparty changes
+Bump lua-MessagePack version to 0.5.2.
+Bump json.lua version to 0.1.2.
+Website changes
+Merge luaradio.io website subproject into website/ folder.
+Update luaradio.io website URL with https.
+v0.5.1 - 09/03/2018
+
+Block changes
+Fix symbol issue with libSoapySDR library load on Mac OS X in SoapySDRSource and SoapySDRSink.
+Add biastee and bandwidth options to RtlSdrSource.
+Documentation changes
+Fix minor typos in a few docstrings.
+Fix source in flow graph for benchmark example.
+Rewrite reference manual generator in Python.
+Update docstrings for new reference manual generator.
+Contributors
+Ralf Biedert (@ralfbiedert) - 49d66027
+Ralf Biedert (@ralfbiedert) - 824057ba
+Phil (@philharrisathome) - 68d6a838
+v0.5.0 - 11/21/2016
+
+Block additions
+UHDSource
+UHDSink
+NopSink
+NopBlock
+Block changes
+Fix ThrottleBlock implementation with adaptive delay.
+Fix error reporting during initialization in PulseAudioSource and PulseAudioSink.
+Fix settings table argument in SoapySDRSource and SoapySDRSink.
+Rename NullSource to ZeroSource.
+Core changes
+Add time_us() helper to platform module.
+Documentation changes
+Fix minor typos in a few docstrings.
+Improve wording in several documents.
+Update supported hardware document with USRP support.
+Contributors
+Daniel Von Fange - 22932b1
+v0.4.0 - 08/31/2016
+
+Block additions
+HackRFSink
+SoapySDRSource
+SoapySDRSink
+PulseAudioSource
+InterleaveBlock
+DeinterleaveBlock
+Block changes
+Fix I/Q sample conversion in HackRFSource.
+Add FFT overlap-save implementation to FIRFilterBlock.
+Improve performance of real to complex DFT in spectrum_utils.
+Refactor PSD into separate class in spectrum_utils.
+Add IDFT to spectrum_utils.
+Add error handling for process pipe writes in gnuplot plotting sinks.
+Fix default window type and columns values in GnuplotWaterfallSink.
+Benchmark changes
+Add FFT-based FIR filters to benchmarks.
+ปรับความยาวก๊อกน้ำกรองในเกณฑ์มาตรฐาน
+Core changes
+ปรับปรุงการจัดการข้อผิดพลาดและการติดตามย้อนกลับเมื่อบล็อกดาวน์สตรีมขัดข้อง
+Documentation changes
+แก้ไขคำพิมพ์ผิดเล็กน้อยใน docstrings บางรายการ
+อัปเดตเอกสารฮาร์ดแวร์ที่รองรับ
+v0.3.0 - 28/07/2559
+
+การเพิ่มบล็อค
+เอจีซีบล็อค
+พาวเวอร์สเควล์ชบล็อค
+วาริโค้ดดีโคเดอร์บล็อค
+การเพิ่มเติมแบบผสม
+BPSK31ตัวรับ
+การเปลี่ยนแปลง API ของ C
+เพิ่มการติดตามสแต็กกลับไปยังข้อความแสดงข้อผิดพลาด
+การเปลี่ยนแปลงเอกสาร
+เพิ่มคำแนะนำการติดตั้ง Ubuntu ลงในคู่มือการติดตั้ง
+แก้ไขการพิมพ์ผิดเล็กน้อยและการใช้คำในเอกสารและ docstrings บางฉบับ
+ตัวอย่างการเปลี่ยนแปลง
+แทนที่ค่าคงที่เกนด้วยการควบคุมค่าเกนอัตโนมัติในตัวอย่าง rtlsdr_am_envelope, rtlsdr_am_synchronous และ rtlsdr_ssb
+v0.2.0 - 16/07/2559
+
+การเพิ่มบล็อค
+แอร์สปายซอร์ส
+แฮ็กอาร์เอฟซอร์ส
+SDRplaySource
+การเปลี่ยนแปลงบล็อค
+เพิ่มอุปกรณ์ที่เหมาะสมใกล้กับ RtlSdrSource
+การเปลี่ยนแปลงหลัก
+เพิ่มตัวห่อการโทรกลับแบบอะซิงโครนัสเพื่อรองรับการโทรกลับจากเธรดและตัวจัดการสัญญาณ
+การเปลี่ยนแปลงเอกสาร
+เพิ่มเอกสารฮาร์ดแวร์ที่รองรับ
+เพิ่มคำแนะนำการติดตั้ง Homebrew ลงในคู่มือการติดตั้ง
+ผู้สนับสนุน
+มาร์ติน มุลเลอร์ - 354cd5e0
+โดมินิก สปิลล์ - 26bcbf72
+ขอขอบคุณเป็นพิเศษแก่ @zeryl, @rxseger, @dominicgs สำหรับการทดสอบและแก้ไขบล็อกแหล่งที่มาของ HackRF
+v0.1.2 - 07/09/2016
+
+การเปลี่ยนแปลง API ของ C
+ใช้ /usr/local เป็นคำนำหน้าเริ่มต้นสำหรับการติดตั้งใน Makefile
+แยกหมายเลขเวอร์ชันจากแพ็คเกจวิทยุแทนแท็ก git ใน Makefile
+ตัวอย่างการเปลี่ยนแปลง
+ลบการตั้งค่าการแก้ไขความถี่ RtlSdrSource เฉพาะการตั้งค่าจากตัวอย่างที่ถูกส่งโดยไม่ได้ตั้งใจ
+การเปลี่ยนแปลงเอกสาร
+รูปตัวอย่างลายเซ็นประเภทการแก้ไข
+แก้ไขการพิมพ์ผิดเล็กน้อยและการใช้คำในเอกสารและ docstrings บางฉบับ
+เพิ่มคะแนนสักสองสามคะแนนในเอกสารเปรียบเทียบกับ GNU Radio
+เพิ่มข้อกำหนดเบื้องต้นและข้อกำหนดที่ต้องพึ่งพาในคู่มือการติดตั้ง
+เพิ่มเอกสารการมีส่วนสนับสนุน
+ผู้สนับสนุน
+เควิน เมฮอลล์ - 8a859261
+v0.1.1 - 07/03/2016
+
+การเปลี่ยนแปลงบล็อค
+เพิ่มตัวเลือกดัชนีอุปกรณ์ให้กับ RtlSdrSource
+เลือกค่า RF เริ่มต้นจากค่าที่ได้รับการสนับสนุนจากดองเกิลใน RtlSdrSource
+การเปลี่ยนแปลง API ของ C
+ค้นหาเส้นทางการติดตั้งโมดูล lua C แทนที่จะสันนิษฐานไว้ใน Makefile
+ตัวอย่างการเปลี่ยนแปลง
+แก้ไขแบนด์วิดท์ตัวกรองจูนเนอร์ใน rtlsdr_rds
+การเปลี่ยนแปลงเอกสาร
+ทำให้ประเภทเป็นตัวหนาในรูปตัวอย่างลายเซ็นประเภท
+ปรับปรุงถ้อยคำในการเปรียบเทียบกับเอกสาร GNU Radio
+v0.1.0 - 07/02/2016
+
+การเปิดตัวครั้งแรก
+(ต้นแบบ) v0.0.20 - 07/01/2016
+
+การเพิ่มบล็อค
+แมนเชสเตอร์ดีโคเดอร์บล็อค
+การเปลี่ยนแปลงบล็อค
+เรียงลำดับการเริ่มต้นใหม่ใน RtlSdrSource เพื่อแก้ไขคำเตือน "PLL ไม่ได้ล็อค"
+ย้ายบล็อกการแปลงประเภทจากเบ็ดเตล็ดไปยังหมวดหมู่ของตัวเองใน docstring ของบล็อก
+การเปลี่ยนแปลงแบบองค์รวม
+ปรับปรุงการสุ่มตัวอย่างบิตและการถอดรหัส และลดความซับซ้อนของการดีมอดูเลต BPSK ที่ไม่สอดคล้องกันใน RDSReceiver
+การเปลี่ยนแปลง API ของ C
+เพิ่มเป้าหมายการติดตั้งลงใน Makefile
+เพิ่มหมายเลขเวอร์ชันสำรองลงใน Makefile เพื่อสร้างจาก Git Tree
+แก้ไขการสร้างไลบรารีที่แชร์บน Mac OS X
+ปรับปรุงความสามารถในการพกพาของตัวอย่าง rds-timesync เพื่อรองรับ Mac OS X
+เปลี่ยนชื่อตัวอย่าง fmradio เป็น fm-radio เพื่อความสอดคล้อง
+การเปลี่ยนแปลงนักวิ่ง
+เพิ่มการสนับสนุนสำหรับการรันสคริปต์จากมาตรฐานใน
+การเปลี่ยนแปลงเอกสาร
+ปรับขนาดรูปภาพทั้งหมดให้น้อยกว่า 800 พิกเซล
+ลดความซับซ้อนของคำแนะนำในการติดตั้ง
+ปรับปรุงการใช้คำในเอกสารทั้งหมด
+ปรับปรุงการจัดรูปแบบและคำศัพท์ใน docstring หลาย ๆ รายการ
+ปรับปรุงการจัดรูปแบบของคู่มืออ้างอิง
+การเปลี่ยนแปลงเกณฑ์มาตรฐาน
+เพิ่มจำนวนการทดลองจาก 3 เป็น 5
+เพิ่มการคำนวณค่าเบี่ยงเบนมาตรฐาน
+ย่อชื่อเกณฑ์มาตรฐาน
+ตัวอย่างการเปลี่ยนแปลง
+ปรับปรุงการสุ่มตัวอย่างบิตและการถอดรหัส และลดความซับซ้อนของการดีมอดูเลต BPSK ที่ไม่สอดคล้องกันใน rtlsdr_rds
+ปรับปรุงช่วงพล็อตของสเปกตรัม RF ใน rtlsdr_ssb
+ปรับปรุงชื่อตัวแปรในตัวอย่างหลายๆ ตัวอย่าง
+Rearrange code and add section comments for clarity in all examples.
+(Prototype) v0.0.19 - 06/04/2016
+
+Documentation changes
+Add packaged third-party modules licenses to LICENSE file.
+Add docstrings throughout codebase and blocks.
+Add reference manual generator.
+Add documents:
+Reference Manual
+Installation
+Creating Blocks
+Embedding LuaRadio
+Architecture
+Comparison to GNU Radio
+Add tests README.
+Add examples README.
+Add project README.
+(Prototype) v0.0.18 - 06/04/2016
+
+Block additions
+RealToComplexBlock
+AddConstantBlock
+SinglepoleLowpassFilterBlock
+SinglepoleHighpassFilterBlock
+FMPreemphasisFilterBlock
+Block changes
+Add return codes to error messages in RtlSdrSource.
+Improve performance of RtlSdrSource by using rtlsdr_read_async().
+Change gain argument to modulation index in FrequencyDiscriminatorBlock.
+Add filename and file object support to BenchmarkSink.
+Add periodic human-readable reporting to BenchmarkSink.
+Refactor FMDeemphasisFilterBlock to use SinglepoleLowpassFilterBlock.
+Rearrange optional nyquist frequency argument order in filter blocks.
+Fix overflow for sample values of 1.0 in WAVFileSink.
+Add sampling interval to BinaryPhaseCorrectorBlock to reduce computation.
+Use line style 1 for plotting in GnuplotPlotSink, GnuplotXYPlotSink, GnuplotSpectrumSink.
+Add argument assertions to all blocks.
+Refactor all blocks to use persistent output sample vectors.
+Composite changes
+Remove constant audio gain block from AMEnvelopeDemodulator, AMSynchronousDemodulator, and SSBDemodulator.
+Add DC rejection filter for carrier to AMEnvelopeDemodulator and AMSynchronousDemodulator.
+Add argument assertions to all composites.
+Example changes
+Add iqfile_converter example.
+Add DC rejection filter for carrier to rtlsdr_am_envelope and rtlsdr_am_synchronous.
+Remove autogain setting from RTL-SDR source in rtlsdr_wbfm_mono, rtlsdr_wbfm_stereo, rtlsdr_rds examples.
+Make tune offsets consistent across examples.
+Make plot ranges consistent across examples.
+Add headless running support to all examples.
+(Prototype) v0.0.17 - 06/03/2016
+
+Core changes
+Fix deadlock in synchronous read of multiple pipes, when a slower input pipe has an indirect dependency on a faster input pipe because it shares a common upstream writer.
+Enforce all block input rates match before running in CompositeBlock.
+Enforce inputs/outputs names match previous type signatures in Block.
+Close unneeded file descriptors in block process after forking in CompositeBlock.
+Add protected call wrapper to block running in CompositeBlock.
+Add status() method to CompositeBlock.
+Add __tostring() metamethod to Vector and ObjectVector.
+Rename type property to data_type in Vector and ObjectVector.
+Return self in resize(), append() methods of Vector and ObjectVector.
+Refactor run() method in Block.
+Rename get_input_types(), get_output_types() methods to get_input_type(), get_output_type() in Block.
+Improve error messages in Block.
+Improve debug and error messages in CompositeBlock.
+Add CompositeBlock control (status, wait, stop) unit tests.
+C API changes
+Rename context type from radio_t to luaradio_t.
+Add luaradio_status() function to wrap CompositeBlock status().
+Add luaradio_get_state() function to get Lua state.
+Refactor and improve C API unit test.
+Clean up fmradio and rds-timesync examples.
+Block changes
+Rename RDSFrameBlock to RDSFramerBlock.
+Rename RDSDecodeBlock to RDSDecoderBlock.
+Rename AX25FrameBlock to AX25FramerBlock.
+Rename POCSAGFrameBlock to POCSAGFramerBlock.
+Rename POCSAGDecodeBlock to POCSAGDecoderBlock.
+Rename SumBlock to AddBlock.
+Benchmark changes
+Reduce factors in downsampler and upsampler benchmarks.
+Increase buffer sizes in several file source benchmarks.
+(Prototype) v0.0.16 - 05/03/2016
+
+Simplify class module namespacing, including blocks and basic types.
+Improve basic type names.
+Remove unused Integer32 basic type.
+Remove Pipe vmsplice() feature, which was problematic with blocks that use persistent sample buffers.
+Change Pipe backend from UNIX pipes to UNIX sockets.
+Eliminate sleeping in CompositeBlock wait().
+Add version_info table to radio package.
+Add liquid-dsp library loading to platform module.
+Add liquid-dsp implementation to the following blocks and classes:
+FIRFilterBlock
+IIRFilterBlock
+HilbertTransformBlock
+FrequencyTranslatorBlock
+DFT in spectrum_utils
+Add file object support to the following sources and sinks:
+IQFileSource
+RawFileSource
+RealFileSource
+WAVFileSource
+IQFileSink
+RawFileSink
+WAVFileSink
+RealFileSink
+Fix infinite loop bug on invalid frame sync codeword in POCSAGFrameBlock.
+Add "Multiply (Real-valued)" benchmark to benchmark suites.
+Add SIGINT handling to LuaRadio benchmark suite.
+Reduce number of filter taps in most modulation, demodulation, and receiver composite blocks.
+Reduce number of filter taps in most examples.
+Change decimators to downsamplers in several examples, where additional filtering before downsampling wasn't needed.
+(Prototype) v0.0.15 - 04/18/2016
+
+Add BenchmarkSink block.
+Remove old LuaRadio and GNURadio benchmark scripts.
+Add more comprehensive LuaRadio and GNURadio benchmark suites.
+Improve performance of arg() and abs() methods of ComplexFloat32Type.
+Improve performance of several blocks:
+DelayBlock
+DifferentialDecoderBlock
+FrequencyDiscriminatorBlock
+SignalSource
+FIRFilterBlock
+HilbertTransformBlock
+Fix unit tests descriptions for DelayBlock and IIRFilterBlock.
+(Prototype) v0.0.14 - 04/15/2016
+
+Fix resizing zero length vectors.
+Add get_input_types() and get_output_types() methods to Block base class.
+Simplify repeated code in some blocks with Block base class methods.
+Improve portability of several C definitions with typedefs.
+Fix C error message construction throughout the codebase.
+Fix clean up in several sinks on early exit before process() is run.
+Add install hints to error messages for library soft dependencies.
+Add CPU count, CPU model, LuaJIT version lookups to platform module and the luaradio runner platform dump.
+Fix RtlSdrSource initialization on Mac OS X platform.
+Rename RandomSource to UniformRandomSource and add support for custom range and seed.
+(Prototype) v0.0.13 - 04/09/2016
+
+Add luaradio executable with help, version, platform, and verbosity options.
+Add version string and version number to radio package.
+Add version string, version number, and version info to C API.
+Add LuaJIT interpreter check to radio package init.
+Add debug module for gated printing of debug messages.
+Use debug module instead of io.stderr in several blocks.
+Remove C luaradio executable.
+Rename demos/ to examples/.
+Rename embed/demos/ to embed/examples/.
+Update C API unit test.
+Fix running certain composite block unit tests on FreeBSD.
+Refactor Python unit test generators and split them into separate files.
+(Prototype) v0.0.12 - 04/07/2016
+
+Rename wbfm_rtlsdr demo to rtlsdr_wbfm_mono.
+Rename rds_rtlsdr demo to rtlsdr_rds.
+Improve plotting, variable names, and performance of rtlsdr_wbfm_mono and rtlsdr_rds demos.
+Add new protocol blocks:
+AX25FrameBlock
+POCSAGFrameBlock
+POCSAGDecodeBlock
+Refactor RDSFrameBlock and RDSDecodeBlock.
+Add new demos:
+rtlsdr_wbfm_stereo
+rtlsdr_nbfm
+rtlsdr_am_envelope
+rtlsdr_am_synchronous
+rtlsdr_ssb
+wavfile_ssb_modulator
+rtlsdr_ax25
+rtlsdr_pocsag
+Add new composite blocks:
+NBFMDemodulator
+AMEnvelopeDemodulator
+AMSynchronousDemodulator
+SSBDemodulator
+SSBModulator
+WBFMMonoDemodulator
+WBFMStereoDemodulator
+RDSReceiver
+AX25Receiver
+POCSAGReceiver
+Use composite blocks in rds-timeync and fmradio embed demos.
+Improve unit tests.
+(Prototype) v0.0.11 - 04/01/2016
+
+Fix execution of composite blocks with intermediate sinks.
+Add support for aliasing a composite block input to multiple block inputs.
+Add vector_from_array() vector constructor to ObjectType.
+Move bits_to_number() helper function to BitType.tonumber() static method.
+Simplify DecimatorBlock, InterpolatorBlock, RationalResamplerBlock constructors.
+Fix scaling in InterpolatorBlock and RationalResamplerBlock.
+Fix low pass filter cutoff in TunerBlock.
+Fix output data type in FloatToComplexBlock type signature.
+Fix output data type in RawFileSource type signature.
+Fix size type bug in RawFileSource.
+Fix file repeat in WAVFileSource.
+Add RF gain and frequency correction options to RtlSdrSource.
+Add magnitude reference level option to GnuplotSpectrumSink.
+Add min/max magnitude options to GnuplotWaterfallSink.
+Disable file stream buffering in RawFileSink, JSONSink, and PrintSink.
+Add filename and file descriptor support to PrintSink.
+Add invert option to DifferentialDecoderBlock.
+Normalize passband gain to 1.0 in FIR window design functions.
+Add support for specifying a normalized nyquist frequency to filter blocks.
+Add support for complex taps to FIRFilterBlock.
+Add complex bandpass and bandstop FIR window design functions.
+Add new signal blocks:
+ComplexBandpassFilterBlock
+ComplexBandstopFilterBlock
+ComplexConjugateBlock
+ZeroCrossingClockRecoveryBlock
+Add new sink blocks:
+PortAudioSink
+Improve unit tests.
+Add composite block unit tests.
+Improve namespacing with package inits for blocks and composites.
+Simplify block imports in composite blocks.
+(Prototype) v0.0.10 - 03/10/2016
+
+Add abs_squared() method to ComplexFloat32Type.
+Add cosine, sine, square, triangle, sawtooth, and constant real signals to SignalSource.
+Add file repeat option to IQFileSource, RealFileSource, WAVFileSource, RawFileSource.
+Add support for multiple channels to PulseAudioSink.
+Add support for other data types to NullSource and RandomSource.
+Add support for generating periodic windows to window utilities.
+Add FFTW3 library and feature flag to platform module.
+Add DFT and PSD spectrum utilities with Lua, VOLK, and FFTW3 implementations.
+Add new signal blocks:
+SubtractBlock
+ComplexToImagBlock
+ComplexToFloatBlock
+FloatToComplexBlock
+ComplexMagnitudeBlock
+ComplexPhaseBlock
+AbsoluteValueBlock
+MultiplyConstantBlock
+UpsamplerBlock
+ThrottleBlock
+Add new composite blocks:
+InterpolatorBlock
+RationalResamplerBlock
+Add gnuplot-based plotting sinks:
+GnuplotPlotSink
+GnuplotXYPlotSink
+GnuplotSpectrumSink
+GnuplotWaterfallSink
+Fix numerical stability problem in FrequencyTranslatorBlock and SignalSource.
+Improve unit tests.
+Add plots to RDS and WBFM demos.
+(Prototype) v0.0.9 - 03/02/2016
+
+Simplify type imports in blocks.
+Fix single process execution to call block cleanup() after finish.
+Fix block initialization order.
+Extend file source and sink blocks to:
+IQFileSource / IQFileSink
+RealFileSource / RealFileSink
+RawFileSource / RawFileSink
+WAVFileSource / WAVFileSink
+Improve unit tests.
+Reorganize package init for readability.
+(Prototype) v0.0.8 - 02/28/2016
+
+Add libluaradio library with a C API to the LuaRadio runtime.
+Add fmradio and rds-timesync demos for libluaradio.
+Add standalone luaradio interpreter.
+(Prototype) v0.0.7 - 02/26/2016
+
+Add platform module with platform-specific constants and allocator.
+Handle missing library gracefully in RtlSdrSource and PulseAudioSink.
+Add portable implementation of Pipe for non-Linux platforms.
+Add portable Lua implementations of signal processing blocks for Volk-less platforms.
+Fix other minor portability issues.
+This release adds support for FreeBSD and Mac OS X platforms.
+(Prototype) v0.0.6 - 02/25/2016
+
+Rename some blocks for consistency.
+Return nil on EOF from source blocks instead of exiting.
+Add File[IQ]DescriptorSource blocks and derive File[IQ]Source blocks from them.
+Fix s32 format in File[IQ]DescriptorSource.
+Fix bnot() operator in BitType.
+Fix overflow/underflow handling in Integer32Type.
+Use POSIX pipes in single process execution.
+Add more argument and behavior assertions to Block and CompositeBlock.
+Add unit tests.
+(Prototype) v0.0.5 - 02/12/2016
+
+Change CompositeBlock run() to use multiprocesses by default.
+Use CStructType factory to build all basic types.
+Add tostring() support to Block.
+Handle pipe EOF in Block run() to stop processing and clean up.
+Update benchmarks.
+Rename SourceBlock to Source and SinkBlock to Sink.
+(Prototype) v0.0.4 - 02/12/2016
+
+Add support for functions as candidate input types in block type signatures.
+Add support for variable length type serialization with ProcessPipe.
+เพิ่มประเภทวัตถุ Lua ที่กำหนดเองของโรงงาน ObjectType (แบบอนุกรมด้วย MessagePack)
+เพิ่ม JsonSinkBlock และอัปเดตการสาธิต RDS เพื่อใช้งาน
+(ต้นแบบ) v0.0.3 - 02/11/2016
+
+เพิ่มโรงงาน CStructType สำหรับประเภท cstruct แบบกำหนดเอง
+เพิ่มคลาส Vector และวิธีการ resize() และ append()
+เพิ่มบล็อคที่จำเป็นในการใช้งานเดโมดูเลเตอร์/เดโมตัวถอดรหัส RDS
+เพิ่มบล็อกคอมโพสิต TunerBlock และ DecimatorBlock
+อัปเดตเดโมเพื่อใช้บล็อคคอมโพสิต
+(ต้นแบบ) v0.0.2 - 02/08/2016
+
+เพิ่มการรองรับบล็อกลำดับชั้นให้กับ CompositeBlock
+เพิ่มตัวควบคุม start(), stop(), wait(), run() ให้กับ CompositeBlock
+เพิ่มการสนับสนุนสำหรับทางลัดแบบโซ่เชิงเส้นให้กับ CompositeBlock connect() (เช่น connect(b1, b2, b3, ...))
+(ต้นแบบ) v0.0.1 - 02/06/2016
+
+ต้นแบบเริ่มต้นด้วยการสาธิต wbfm
+ 
 ```
 OLICEายชื่อแหล่งข้อมูลหล่งรวมข้อมูล
 แหล่งรวมข้อมูล
