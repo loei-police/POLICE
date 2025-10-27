@@ -1,0 +1,25 @@
+Cleanup hook, default no-op implementation.
+
+radio.block.factory(name[, parent_class=nil])
+Block class factory.
+
+Arguments
+name (string): Block name
+parent_class (class): Inherited parent class
+Example
+local MyBlock = radio.block.factory("MyBlock")
+
+function MyBlock:instantiate(a, b)
+    self.param = a + b
+
+    self:add_type_signature({radio.block.Input("in", radio.types.Float32)},
+                            {radio.block.Output("out", radio.types.Float32)})
+end
+
+function MyBlock:initialize()
+    -- Differentiated data type and sample rate dependent initialization
+end
+
+function MyBlock:process(x)
+    return x
+end
