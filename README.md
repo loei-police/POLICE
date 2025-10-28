@@ -1,5 +1,11 @@
 
 บันทึกการเปลี่ยนแปลง: อัปเดตสำหรับ v0.11.0
+```
+git branch -m main 200
+git fetch origin
+git branch -u origin/200 200
+git remote set-head origin -a
+```
 6c4d7b9
  - 
 3 ปีที่แล้ว
